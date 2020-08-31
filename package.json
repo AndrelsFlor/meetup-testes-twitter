@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "NODE_ENV=development nodemon src/server.js",
         "pretest": "NODE_ENV=test sequelize db:migrate",
-        "test": "NODE_ENV=test jest --runInBand",
+        "test": "jest --setupFiles dotenv/config",
         "posttest": "NODE_ENV=test sequelize db:migrate:undo:all",
         "build": "sucrase ./src -d ./dist --transforms imports",
         "start": "node dist/server.js"
@@ -22,6 +22,7 @@
         "jsonwebtoken": "^8.5.1",
         "mysql2": "^1.6.5",
         "sequelize": "^5.10.3",
+        "twitter": "^1.7.1",
         "youch": "^2.0.10",
         "yup": "^0.27.0"
     },
@@ -38,7 +39,7 @@
         "eslint-plugin-prettier": "^3.1.0",
         "factory-girl": "^5.0.4",
         "faker": "^4.1.0",
-        "jest": "^24.8.0",
+        "jest": "^26.4.1",
         "nodemon": "^1.19.1",
         "prettier": "^1.18.2",
         "sequelize-cli": "^5.5.0",

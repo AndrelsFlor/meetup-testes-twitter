@@ -1,9 +1,8 @@
 import { Router } from 'express';
+import TwitterController from './app/controllers/Twitter';
 
 const routes = new Router();
 
-routes.get('/hello', (req, res, next) => {
-    res.send('World');
-});
+routes.get('/tweets/:query', TwitterController.getTweets);
 
 export default routes;
